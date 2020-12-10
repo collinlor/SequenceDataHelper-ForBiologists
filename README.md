@@ -3,6 +3,10 @@ This repository holds python scripts meant to help biologists analyze their sequ
 
 These sequence analysis tools are designed for DNA or RNA sequencing. 
 
+Prior Requirements--------
+Firstly, Python3 must be installed on the Linux machine. Instructions for checking for and downloading Python3 can be found here: https://docs.python-guide.org/starting/install3/linux/ 
+
+
 Fastq Quality Filtering ------
   First, the raw read data must be filtered by quality. Fastq sequence files contain a quality indicator for every nucleotide in the read. The Joint Genome Institute has a tool called BBDuk that will remove and trim reads that fall below a quality threshold. Low quality reads may indicate sample contamination, and it is highly recommended that they be filtered out before further analysis. 
 Follow https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/installation-guide/ for tool installation instruction and guides. 
