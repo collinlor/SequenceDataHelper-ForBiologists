@@ -3,9 +3,21 @@ import os
 
 def main():
     #file paths for SPAdes, quality trimmed reads, and output
+    
+    #CHANGE ME: change this file path to the full path of spades.py
     spades = '/data/SPAdes_Assembly/SPAdes-3.14.1-Linux/bin/spades.py'
+    
+    #CHANGE ME: change this file path to the path of the directory holding all filtered reads 
     original = '/data/trimmed_practice_reads/'
+    
+    #CHANGE ME: change this to a path of the new directory that will hold all results 
     new = '/data/practice_assemblies/'
+    
+    #CHANGE ME: change this to either 'D' for DNA, 'R' for RNA, or 'M' for metagenomic data
+    which = 'D'
+    
+    #CHANGE ME: change this to represent the alphabetic components to the genomic 'tags'
+    label = 'UMB'
     
     try:
         os.mkdir(new)
