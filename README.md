@@ -30,3 +30,7 @@ SPAdes Assembly --------------
   4. input the type of sequence data. D for DNA/genomic, R for RNA, or M for metagenomic data
   5. input the alphabetic components of the genomic tags for the project. These 'tags' -described above- should be consistent throughout the dataset that you are working with. For example, a three-genome project may use labels G1, G2, and G3 within the read file names to signify the reads corresponding to a specific sample. The input in this example would be 'G'.
   6. input 'Y' if only the output contigs.fasta file is desired; 'N' if all output files are desired
+
+
+Filter Contigs Script Description -------------
+filter_contigs.py is for more advanced users that hope to use NCBI's PGAP for genome annotation. filter_contigs.py uses Biopython, which must be installed (instructions and manual: https://biopython.org/wiki/Download). PGAP has a minimum contig length of 200 basepairs, and filter_contigs.py removes all contigs that do not meet the 200 bp threshold. The input and output file paths must be manually changed before use. Additionally, the user must be weary of the linux machine's file creation permissions, so the script might be required to run in the same directory as the file the user wishes to filter. 
