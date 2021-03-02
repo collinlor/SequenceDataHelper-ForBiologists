@@ -1,6 +1,7 @@
 from Bio import SeqIO
 
 def main():
+    #CHANGE ME: the input and output file names
     inputFile = './UMB2128_contigs.fasta'
     outputFile = './UMB2128_trimmed.fasta'
 
