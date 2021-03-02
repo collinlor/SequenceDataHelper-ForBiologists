@@ -29,3 +29,4 @@ SPAdes Assembly --------------
   3. input the full path of the new directory that will hold all results
   4. input the type of sequence data. D for DNA/genomic, R for RNA, or M for metagenomic data
   5. input the alphabetic components of the genomic tags for the project. These 'tags' -described above- should be consistent throughout the dataset that you are working with. For example, a three-genome project may use labels G1, G2, and G3 within the read file names to signify the reads corresponding to a specific sample. The input in this example would be 'G'.
+  6. input 'Y' if only the output contigs.fasta file is desired; 'N' if all output files are desired
