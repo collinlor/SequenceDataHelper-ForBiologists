@@ -23,13 +23,9 @@ def main():
     toPrune = 'Y'
     
     #making the new directory
-    try:
-        os.mkdir(new)
-    except PermissionError:
-        os.system('sudo mkdir ' + new)
-    except FileExistsError: #if the directory already exists
-        pass
+    makeDIR(new)
 
+    #RUN SPAdes
     runSPAdes(spades, original, new, label, which, toPrune)
 
 def runSPAdes(spades, original, new, label, which, pruner):
@@ -47,20 +43,12 @@ def runSPAdes(spades, original, new, label, which, pruner):
         #need to record the tag for current file
         #must pass the r1name and label to findTag() function
         tag = findTag(r1name,label)
-        
         #end program if the tag cannot be found
         if not type(tag) is string:
             return
         
         #create new directory using file tags as name
-        try:
-            os.mkdir(new + tag)
-        except PermissionError:
-            os.system('sudo mkdir ' + new + tag)
-        except FileExistsError: #the directory already exists
-            print('Warning: ' + new + tag + ' is an existing directory. \n Output will be placed in directory, but output files may be under modified names.')
-            pass
-        
+        makeDIR(new+tag)
         outputDir = new+tag
 
         #form spades command
@@ -125,6 +113,15 @@ def prune(new,sir, tag):
         #relabel contigs.fasta with UMB####
         else:
             os.system('sudo mv ' + sir + 'contigs.fasta ' + sir + tag + '_contigs.fasta')
+            
+#function to make new directories            
+def makeDIR(newt):
+    try:
+        os.mkdir(newt)
+    except PermissionError:
+        os.system('sudo mkdir ' + newt)
+    except FileExistsError: #if the directory already exists
+        print('Warning: ' + newt + ' is an existing directory. \n Output may be placed in directory but under modified names.')
 
 
 main()
