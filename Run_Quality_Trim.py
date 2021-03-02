@@ -104,18 +104,18 @@ def BBDukIt(bbduk, origin, new, readType):
             command = 'bash ' + bbduk + ' in=' + origin+r1name + ' out=' + r1out + ' qtrim=rl trimq=35'
 
         #command check
-        print('\n'+command+'\n')
+        #print('\n'+command+'\n')
         
         #call the command
-        #try:
-        #    os.system(command)
-        #except(PermissionError):
-        #    os.system('sudo ' + command)
-        #except(FileNotFoundError):
-        #    print('The BBDuk script file was not input correctly or the sequence file paths were not correct; be sure to include /"bbduk.sh/" at the end of your BBDuk path /n')
+        try:
+            os.system(command)
+        except PermissionError:
+            os.system('sudo ' + command)
+        except FileNotFoundError:
+            print('The BBDuk script file was not input correctly or the sequence file paths were not correct; be sure to include /"bbduk.sh/" at the end of your BBDuk path /n')
         
         #test
-        break
+        #break
 
 
 main()
